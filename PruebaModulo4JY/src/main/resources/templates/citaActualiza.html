@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+ <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+
+<body>
+<class=container my-5>
+<h3>ActualizarCita</h3>
+	<div class="card-body"> 
+	<form action="#" th:action="@{/citas/actualizar/{numCita}(numCita=${citaMedica.numero})}" th:object="${citaMedica}" th:method="POST">
+		<div class="table table-dark table-striped">
+		<table>
+			<tr>
+				<td>
+					<label class="col-form-label">Id:</label>
+				</td>
+				<td>
+					<input type="text" id="id" th:field="*{id}">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>numero:</label>
+				</td>
+				<td>
+					<input type="text" id="name" th:field="*{numero}">
+				</td>
+			</tr>
+			<td>
+				<label>Valor:</label>
+			</td>
+			<td>
+				<input type="number" id="valo" th:field="*{valor}">
+			</td>
+			<tr>
+				<td>
+					<label>lugar:</label>
+				</td>
+				<td>
+					<input type="text" id="lug" th:field="*{lugar}">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>diagnostico:</label>
+				</td>
+				<td>
+					<input type="text" id="diag" th:field="*{diagnostico}">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>receta:</label>
+				</td>
+				<td>
+					<input type="text" id="receta" th:field="*{receta}">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Fecha control:</label>
+				</td>
+				<td>
+					
+					<input class="form-control" type="datetime-local" id="fecha" th:field="*{fechaControl}">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Cedula doctor:</label>
+				</td>
+				<td>
+					<input type="text" id="ced" th:field="*{doctor.cedula}">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Cedula paciente:</label>
+				</td>
+				<td>
+					<input type="text" id="pac" th:field="*{paciente.cedula}">
+				</td>
+			</tr>
+			<tr>
+			</tr>
+		</table>
+		</div>
+		<input class="btn btn-outline-dark" type="submit" value="Actualizar">
+	</form>
+</div>
+</body>
+
+
+
+</html>
